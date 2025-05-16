@@ -1,6 +1,7 @@
+--loadstring(game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/main/dex.lua"))()
+
 local uis = game:GetService("UserInputService")
 local plr = game.Players.LocalPlayer
---local location = game.Workspace.Location
 local gui = Instance.new("ScreenGui", plr:WaitForChild("PlayerGui"))
 gui.Name = "TeleportGui"
 gui.ResetOnSpawn = false
@@ -229,7 +230,8 @@ center_stroke.Thickness = 2
 local center_corner = Instance.new("UICorner", center_option)
 center_corner.CornerRadius = UDim.new(0, 8)
 
-local part = game.Workspace:WaitForChild("Part")
+local location = game.Workspace:WaitForChild("location")
+local location2 = game.Workspace:WaitForChild("location2")
 
 local isFrameOpen = false
 
@@ -242,7 +244,13 @@ uis.InputBegan:Connect(function(input, gameProcessed)
 	end
 
 	if isFrameOpen and input.KeyCode == Enum.KeyCode.C then
-		plr.Character.HumanoidRootPart.CFrame = CFrame.new(part.CFrame.Position) + Vector3.new(0.1, 3, 0.1)
+		plr.Character.HumanoidRootPart.CFrame = CFrame.new(location.CFrame.Position) + Vector3.new(0.1, 3, 0.1)
+		frame.Visible = false
+		isFrameOpen = false
+	end
+	
+	if isFrameOpen and input.KeyCode == Enum.KeyCode.P then
+		plr.Character.HumanoidRootPart.CFrame = CFrame.new(location2.CFrame.Position) + Vector3.new(0.1, 3, 0.1)
 		frame.Visible = false
 		isFrameOpen = false
 	end
