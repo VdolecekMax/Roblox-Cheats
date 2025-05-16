@@ -69,7 +69,7 @@ local pyramid_option = createButton("Place 8 [P]", UDim2.new(0.35, 0, 0.54, 0), 
 local weapons_option = createButton("Place 9 [N]", UDim2.new(0.674, 0, 0.54, 0), frame)
 local garage_option = createButton("Place 10 [G]", UDim2.new(0.026, 0, 0.731, 0), frame)
 local airport_option = createButton("Place 11 [I]", UDim2.new(0.35, 0, 0.731, 0), frame)
-local center_option = createButton("Place 12 [T]", UDim2.new(0.674, 0, 0.731, 0), frame)
+local center_optio = createButton("Place 12 [T]", UDim2.new(0.674, 0, 0.731, 0), frame)
 
 -- Fix corner assignment typo
 -- Corrected: casino_corner.CornerRadius = UDim.new(0, 8)
