@@ -231,22 +231,19 @@ center_corner.CornerRadius = UDim.new(0, 8)
 
 local part = game.Workspace:WaitForChild("Part")
 
+local isFrameOpen = false
+
 uis.InputBegan:Connect(function(input, gameProcessed)
+	if gameProcessed then return end
+
 	if input.KeyCode == Enum.KeyCode.T then
-		if frame.Visible == false then
-			frame.Visible = true
-			
-			if frame.Visible == true then
-				uis.InputBegan:Connect(function(input, gameProcessed)
-					if input.KeyCode == Enum.KeyCode.C then
-						plr.Character.HumanoidRootPart.CFrame = CFrame.new(part.CFrame.Position) + Vector3.new(0.1, 3, 0.1)
-						frame.Visible = false
-					end
-				end)
-			end
-			
-		else
-			frame.Visible = false
-		end
+		isFrameOpen = not isFrameOpen
+		frame.Visible = isFrameOpen
+	end
+
+	if isFrameOpen and input.KeyCode == Enum.KeyCode.C then
+		plr.Character.HumanoidRootPart.CFrame = CFrame.new(part.CFrame.Position) + Vector3.new(0.1, 3, 0.1)
+		frame.Visible = false
+		isFrameOpen = false
 	end
 end)
