@@ -1,4 +1,4 @@
---loadstring(game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/main/dex.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/main/dex.lua"))()
 
 local uis = game:GetService("UserInputService")
 local plr = game.Players.LocalPlayer
